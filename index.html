@@ -57,13 +57,12 @@
           body: data
         });
 
-        if (!res.ok) throw new Error("Error en la respuesta");
+        const text = await res.text();
 
-        // Mostrar toast y ocultar formulario
+        toast.textContent = text;
         toast.classList.add('show');
         form.style.display = 'none';
 
-        // Opcional: ocultar toast después de 5 segundos y mostrar formulario de nuevo
         setTimeout(() => {
           toast.classList.remove('show');
           form.style.display = 'block';
@@ -72,6 +71,7 @@
 
       } catch(err) {
         alert("Ha ocurrido un error. Intenta de nuevo más tarde.");
+        console.error(err);
       }
     });
   </script>
