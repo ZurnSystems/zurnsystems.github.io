@@ -1,22 +1,40 @@
-<!-- index.html -->
+<!-- Estructura básica con Tailwind CSS (listo para GitHub Pages) -->
 <!DOCTYPE html>
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Tu Negocio</title>
+  <title>Zbyte Bots</title>
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
 </head>
-<body class="bg-gray-100 text-gray-800">
-  <section class="p-10 text-center">
-    <h1 class="text-4xl font-bold mb-4">Nombre del negocio</h1>
-    <p class="text-lg mb-6">Tu texto atractivo aquí. Ofrece un servicio o solución concreta.</p>
-    <form action="https://formsubmit.co/danisaezsk8@gmail.com" method="POST" class="space-y-4 max-w-md mx-auto">
-      <input type="text" name="nombre" placeholder="Tu nombre" required class="w-full p-2 border rounded" />
-      <input type="email" name="email" placeholder="Tu correo" required class="w-full p-2 border rounded" />
-      <textarea name="mensaje" placeholder="¿En qué te puedo ayudar?" required class="w-full p-2 border rounded"></textarea>
-      <button type="submit" class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">Enviar</button>
-    </form>
+<body class="bg-gray-900 text-white">
+  <section class="p-10 text-center max-w-3xl mx-auto">
+    <h1 class="text-4xl font-bold mb-4">Automatiza tu negocio con un bot de Telegram</h1>
+    <p class="text-lg mb-6">Diseño bots personalizados para tiendas, creadores de contenido y negocios. Responde automáticamente, genera pedidos, organiza reservas y mucho más.</p>
+
+    <div class="bg-gray-800 p-6 rounded-xl shadow-lg text-left">
+      <h2 class="text-2xl font-semibold mb-4">¿Qué puede hacer tu bot?</h2>
+      <ul class="list-disc list-inside space-y-2">
+        <li>Responder preguntas frecuentes</li>
+        <li>Recoger pedidos o citas</li>
+        <li>Mostrar tu catálogo de productos</li>
+        <li>Gestionar canales o grupos automáticamente</li>
+        <li>Enviar mensajes programados o alertas</li>
+      </ul>
+    </div>
+
+    <div class="mt-10 bg-blue-600 p-6 rounded-xl">
+      <h2 class="text-2xl font-semibold mb-4">¿Te interesa?</h2>
+      <p class="mb-4">Rellena el formulario y hablamos de tu idea 👇</p>
+      <form action="https://formsubmit.co/TUCORREO@ejemplo.com" method="POST" class="space-y-4 max-w-md mx-auto">
+        <input type="text" name="nombre" placeholder="Tu nombre" required class="w-full p-2 rounded text-black" />
+        <input type="email" name="email" placeholder="Tu correo" required class="w-full p-2 rounded text-black" />
+        <textarea name="mensaje" placeholder="¿Qué tipo de bot necesitas?" required class="w-full p-2 rounded text-black"></textarea>
+        <button type="submit" class="bg-black text-white px-4 py-2 rounded hover:bg-gray-800 w-full">Enviar</button>
+      </form>
+    </div>
+
+    <p class="mt-6 text-sm text-gray-400">Creado por Zbyte — Bots a medida</p>
   </section>
 </body>
 </html>
