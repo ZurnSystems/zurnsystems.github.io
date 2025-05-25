@@ -11,12 +11,39 @@
     <h1 class="text-4xl font-bold mb-4">Zurnip Bots</h1>
     <p class="text-lg mb-6">Creamos bots de Telegram personalizados para negocios, tiendas e influencers.</p>
     
-    <form action="https://script.google.com/macros/s/AKfycbwUhTv1OOoaxc9VNaa-JCHOB-UtkVM-30ogHloM7a6ePOyAWeaPshWJVb71wQvPZbI/exec" method="POST" class="space-y-4 max-w-md mx-auto">
+    <form id="contact-form" class="space-y-4 max-w-md mx-auto">
       <input type="text" name="nombre" placeholder="Tu nombre" required class="w-full p-2 border rounded" />
       <input type="email" name="email" placeholder="Tu correo" required class="w-full p-2 border rounded" />
       <textarea name="mensaje" placeholder="¿Qué tipo de bot necesitas?" required class="w-full p-2 border rounded"></textarea>
       <button type="submit" class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">Enviar</button>
     </form>
+
+    <div id="respuesta" class="mt-4 text-green-600 font-semibold"></div>
   </section>
+
+  <script>
+    document.getElementById('contact-form').addEventListener('submit', async function (e) {
+      e.preventDefault();
+
+      const form = e.target;
+      const data = new FormData(form);
+      const responseBox = document.getElementById('respuesta');
+
+      try {
+        const res = await fetch("https://script.google.com/macros/s/AKfycbwUhTv1OOoaxc9VNaa-JCHOB-UtkVM-30ogHloM7a6ePOyAWeaPshWJVb71wQvPZbI/exec", {
+          method: "POST",
+          body: data
+        });
+
+        const text = await res.text();
+        responseBox.textContent = text;
+        responseBox.className = "mt-4 text-green-600 font-semibold";
+        form.reset();
+      } catch (err) {
+        responseBox.textContent = "Ha ocurrido un error. Intenta de nuevo más tarde.";
+        responseBox.className = "mt-4 text-red-600 font-semibold";
+      }
+    });
+  </script>
 </body>
 </html>
